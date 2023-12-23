@@ -31,9 +31,12 @@ export function PokemonGrid({ pokemonList }: PokemonGridProps) {
         <h3 className="text-3xl pt-12 pb-6 text-center">Pokemon Collection</h3>
       </div>
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <PokemonCard name="Pikachu"/>
-        <PokemonCard name="Pikachu"/>
-        <PokemonCard name="Pikachu"/>
+            {pokemonList.map((pokemon: any)=>{
+                return (
+                    <PokemonCard name={pokemon.name} key={pokemon.id}/>
+                )
+            })}
+        
       </div>
     </>
   );
